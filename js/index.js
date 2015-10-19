@@ -546,20 +546,44 @@
 // </script>
 	 
 	
-	console.log("9.1.4");
-	$(document).ready(function(){
-		var handledCount=0;
+	// console.log("9.1.4");
+	// $(document).ready(function(){
+	// 	var handledCount=0;
 
-		function handleMouseEnter(e){
-			$(this).css("border","thick solid red");
-		}
-		function handleMouseExit(e){
-			$(this).css("border","");
-			handledCount++;
-			if(handledCount==2){
-				$(this).unbind(e);
-			}
-		}
-		$("img").bind("mouseenter",handleMouseEnter).bind("mouseout",handleMouseExit);
-	});	
+	// 	function handleMouseEnter(e){
+	// 		$(this).css("border","thick solid red");
+	// 	}
+	// 	function handleMouseExit(e){
+	// 		$(this).css("border","");
+	// 		handledCount++;
+	// 		if(handledCount==2){
+	// 			$(this).unbind(e);
+	// 		}
+	// 	}
+	// 	$("img").bind("mouseenter",handleMouseEnter).bind("mouseout",handleMouseExit);
+	// });	
 	
+	// console.log("9.1.5");
+	// $(document).ready(function(){
+
+	// 	function handleMouseEnter(e){
+	// 		$(this).css("border","thick solid red");
+	// 	}
+	// 	function handleMouseOut(e){
+	// 		$(this).css("border","");
+	// 	}
+	// 	$("img").one("mouseenter",handleMouseEnter).bind("mouseout",handleMouseOut);
+	// });
+
+		console.log("9.2");
+	$(document).ready(function(){
+
+		$(document).on({
+			mouseenter:function(){
+				$(this).css("border","thick solid red");
+			},
+			mouseout:function(){
+				$(this).css("border","");
+			}
+		});
+	});
