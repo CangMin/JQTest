@@ -575,15 +575,524 @@
 	// 	$("img").one("mouseenter",handleMouseEnter).bind("mouseout",handleMouseOut);
 	// });
 
-		console.log("9.2");
-	$(document).ready(function(){
+	// 	console.log("9.2");
+	// $(document).ready(function(){
 
-		$(document).on({
-			mouseenter:function(){
-				$(this).css("border","thick solid red");
-			},
-			mouseout:function(){
-				$(this).css("border","");
+	// 	$(document).on({
+	// 		mouseenter:function(){
+	// 			$(this).css("border","thick solid red");
+	// 		},
+	// 		mouseout:function(){
+	// 			$(this).css("border","");
+	// 		}
+	// 	},"img");
+	// 	$("#row1").append($("<div class='dcell'/>")
+	// 	.append("<img src='lily.png'/>")
+	// 	.append("<label for='lily'>Lily:</label>")
+	// 	.append("<input name='lily' value='0' required/>"));
+	// });
+	// 
+	// 	$(document).ready(function(){
+	// 	$('#row1').delegate("img",{
+	// 		mouseenter:function(){
+	// 			$(this).css("border","thick solid red");
+	// 		},
+	// 		mouseout:function(){
+	// 			$(this).css("border","");
+	// 		}
+	// 	});
+
+	// 	$("#row1").append($("<div class='dcell'/>")
+	// 	.append("<img src='carnation.png'/>")
+	// 	.append("<label for='carnation'>carnation:</label>")
+	// 	.append("<input name='carnation' value='0' required/>"));
+
+	// 	$("#row2").append($("<div class='dcell'/>")
+	// 	.append("<img src='lily.png'/>")
+	// 	.append("<label for='lily'>Lily:</label>")
+	// 	.append("<input name='lily' value='0' required/>"));
+	// });
+
+
+	// $(document).ready(function(){
+	// 	$('#row1 img').bind("mouseenter",function(){
+	// 			$(this).css("border","thick solid red");
+	// 		});
+	// 	$('#row2 img').bind("mouseenter",function(e){
+	// 			$(this).css("border","thick solid blue");
+	// 			$("#row1 img").trigger(e);
+	// 		});
+
+	// });
+
+// $(document).ready(function(){
+// 		$('#row1 img').bind("mouseenter",function(){
+// 				$(this).css("border","thick solid red");
+// 			});
+// 		$('#row2 img').bind("mouseenter",function(e){
+// 				$(this).css("border","thick solid blue");
+// 				$("#row1 img").triggerHandler("mouseenter");
+// 			});
+
+// 	});
+
+// 
+// $(document).ready(function(){
+// 	$("<button>toggle</button>")
+// 	.appendTo("#buttonDiv")
+// 	.click(function(e){
+// 		$("div.dcell:first-child").toggle();
+// 		e.preventDefault();
+// 	});
+
+// 	});
+// $(document).ready(function(){
+// 	$("<button>toggle</button>")
+// 	.appendTo("#buttonDiv")
+// 	.click(function(e){
+// 		$("div.dcell:first-child").toggle(false);
+// 		e.preventDefault();
+// 	});
+
+// 	});
+// $(document).ready(function(){
+// 	$("<button>toggle</button>")
+// 	.appendTo("#buttonDiv")
+// 	.click(function(e){
+// 		$("img").toggle("fast","linear");
+// 		e.preventDefault();
+// 	});
+
+// 	});
+// 
+// $(document).ready(function(){
+// 	var hiddenRow="#row2";
+// 	var visibleRow="#row1";
+
+// 	$(hiddenRow).hide();
+
+// 	$("<button>switch</button>")
+// 	.insertAfter("#buttonDiv button")
+// 	.click(function(e){
+// 		$(visibleRow).hide("fast",function(){
+// 			$(hiddenRow).show("fast",function(){
+// 				var temp =hiddenRow;
+// 				hiddenRow=visibleRow;
+// 				visibleRow=temp;
+// 			});
+// 		});
+// 		e.preventDefault();
+
+// 	});
+
+// 	});
+// 	
+// $(document).ready(function(){
+
+// 	$("<button>循环动画</button>")
+// 	.insertAfter("#buttonDiv button")
+// 	.click(function(e){
+// 		performEffect();
+// 		e.preventDefault();
+
+// 	});
+// 	function performEffect(){
+// 		$("h1").toggle("slow",performEffect);
+// 	}
+
+// 	});
+// $(document).ready(function(){
+
+// 	$("<button>滑动</button>")
+// 	.insertAfter("#buttonDiv button")
+// 	.click(function(e){
+// 		$("h1").slideToggle("fast");
+// 		e.preventDefault();
+
+// 	});
+// 	});
+// $(document).ready(function(){
+
+// 	$("<button>淡入淡出</button>")
+// 	.insertAfter("#buttonDiv button")
+// 	.click(function(e){
+// 		$("img").fadeToggle();
+// 		e.preventDefault();
+
+// 	});
+// 	});
+// $(document).ready(function(){
+
+// 	$("<button>淡入淡出</button>")
+// 	.insertAfter("#buttonDiv button")
+// 	.click(function(e){
+// 		$("img").fadeTo("fast",0.5);
+// 		e.preventDefault();
+
+// 	});
+// 	});
+// $(document).ready(function(){
+
+// 	$("form").css({
+// 		"position":"fixed",
+// 		"top":"70px",
+// 		"z-index":"2"
+// 	});
+
+// 	$("h1").css({
+// 		"position":"fixed",
+// 		"z-index":"1",
+// 		"min-width":"0"
+// 	});
+
+// 	$("<button>定制动画</button>")
+// 	.insertAfter("#buttonDiv button")
+// 	.click(function(e){
+// 		$("h1").animate({
+// 			height:$("h1").height()+$("form").height()+10,
+// 			width:($("form").width())
+// 					});
+// 		e.preventDefault();
+
+// 	});
+// 	});
+// $(document).ready(function(){
+
+// 	$("form").css({
+// 		"position":"fixed",
+// 		"top":"70px",
+// 		"z-index":"2"
+// 	});
+
+// 	$("h1").css({
+// 		"position":"fixed",
+// 		"z-index":"1",
+// 		"min-width":"0"
+// 	});
+
+// 	$("<button>定制动画</button>")
+// 	.insertAfter("#buttonDiv button")
+// 	.click(function(e){
+// 		$("h1").animate({
+// 			height:"+=10",
+// 			width:"-=700"
+// 					});
+// 		e.preventDefault();
+
+// 	});
+// 	});
+// $(document).ready(function(){
+
+// 	$("form").css({
+// 		"position":"fixed",
+// 		"top":"70px",
+// 		"z-index":"2"
+// 	});
+
+// 	$("h1").css({
+// 		"position":"fixed",
+// 		"z-index":"1",
+// 		"min-width":"0",
+// 		"background-color":"red"
+// 	});
+
+// 	var timespan="slow";
+
+// 	cycleEffects();
+
+// 	function cycleEffects(){
+// 		$("h1")
+// 		.animate({left:"+=100"},timespan)
+// 		.animate({left:"-=100"},timespan)
+// 		.animate({height:223,width:700},timespan)
+// 		.animate({height:30,width:500},timespan)
+// 		.slideUp(timespan)
+// 		.slideDown(timespan,cycleEffects);
+// 	}
+// 	});
+// $(document).ready(function(){
+
+// 	$("form").remove();
+
+// 	$("h1").css({
+// 		"position":"fixed",
+// 		"z-index":"1",
+// 		"min-width":"0",
+// 		"background-color":"red"
+// 	});
+
+// 	$("<table border=1></table>")
+// 	.appendTo("body").css({
+// 		position:"fixed","z-index":"2",
+// 		"border-collapse":"collapse",top:100
+// 	});
+
+// 	var timespan="slow";
+
+// 	cycleEffects();
+// 	printQueue();
+
+// 	function cycleEffects(){
+// 		$("h1")
+// 		.animate({left:"+=100"},timespan)
+// 		.animate({left:"-=100"},timespan)
+// 		.animate({height:223,width:700},timespan)
+// 		.animate({height:30,width:500},timespan)
+// 		.slideUp(timespan)
+// 		.slideDown(timespan,cycleEffects);
+// 	}
+
+// 	function printQueue(){
+// 		var q=$("h1").queue();
+// 		var qtable=$("table");
+// 		qtable.html("<tr><th>Queue Length:</th><td>"+q.length+"<td></tr>");
+// 		for(var i=0;i<q.length;i++){
+// 			var baseString="<tr><th>"+i+":</td></tr>";
+// 			if(q[i]=="inprogress"){
+// 				$("table").append(baseString+"in progress</td></tr>");
+// 			}else{
+// 				$("table").append(baseString+q[i]+"</td></tr>");
+// 			}
+// 		}
+// 		setTimeout(printQueue,500);
+// 	}
+// 	});
+// $(document).ready(function(){
+
+// 	$("form").remove();
+
+// 	$("h1").css({
+// 		"position":"fixed",
+// 		"z-index":"1",
+// 		"min-width":"0",
+// 		"background-color":"red"
+// 	});
+
+// 	$("<table border=1></table>")
+// 	.appendTo("body").css({
+// 		position:"fixed","z-index":"2",
+// 		"border-collapse":"collapse",top:100
+// 	});
+
+// 	$("<button>停止</button><button>开始</button>")
+// 	.appendTo($("<div/>").appendTo("body").css({
+// 		position:"fixed","z-index":"2","border-collapse":"collapse",top:100,
+// 		left:200
+// 	})).click(function(e){
+// 		$(this).text()=="停止" ? $("h1").stop(true,true) : cycleEffects();
+// 	});
+
+// 	var timespan="slow";
+
+// 	cycleEffects();
+// 	printQueue();
+
+// 	function cycleEffects(){
+// 		$("h1")
+// 		.animate({left:"+=100"},timespan)
+// 		.animate({left:"-=100"},timespan)
+// 		.animate({height:223,width:700},timespan)
+// 		.animate({height:30,width:500},timespan)
+// 		.slideUp(timespan)
+// 		.slideDown(timespan,cycleEffects);
+// 	}
+
+// 	function printQueue(){
+// 		var q=$("h1").queue();
+// 		var qtable=$("table");
+// 		qtable.html("<tr><th>Queue Length:</th><td>"+q.length+"<td></tr>");
+// 		for(var i=0;i<q.length;i++){
+// 			var baseString="<tr><th>"+i+":</td></tr>";
+// 			if(q[i]=="inprogress"){
+// 				$("table").append(baseString+"in progress</td></tr>");
+// 			}else{
+// 				$("table").append(baseString+q[i]+"</td></tr>");
+// 			}
+// 		}
+// 		setTimeout(printQueue,500);
+// 	}
+// 	});
+// $(document).ready(function(){
+
+// 	$("form").remove();
+
+// 	$("h1").css({
+// 		"position":"fixed",
+// 		"z-index":"1",
+// 		"min-width":"0",
+// 		"background-color":"red"
+// 	});
+
+// 	$("<table border=1></table>")
+// 	.appendTo("body").css({
+// 		position:"fixed","z-index":"2",
+// 		"border-collapse":"collapse",top:100
+// 	});
+
+// 	$("<button>停止</button><button>开始</button>")
+// 	.appendTo($("<div/>").appendTo("body").css({
+// 		position:"fixed","z-index":"2","border-collapse":"collapse",top:100,
+// 		left:200
+// 	})).click(function(e){
+// 		$(this).text()=="停止" ? $("h1").stop(true,true) : cycleEffects();
+// 	});
+
+// 	var timespan="slow";
+
+// 	cycleEffects();
+// 	printQueue();
+
+// 	function cycleEffects(){
+// 		$("h1")
+// 		.animate({left:"+=100"},timespan)
+// 		.animate({left:"-=100"},timespan)
+// 		.delay(1000)
+// 		.animate({height:223,width:700},timespan)
+// 		.animate({height:30,width:500},timespan)
+// 		.delay(1000)
+// 		.slideUp(timespan)
+// 		.slideDown(timespan,cycleEffects);
+// 	}
+
+// 	function printQueue(){
+// 		var q=$("h1").queue();
+// 		var qtable=$("table");
+// 		qtable.html("<tr><th>Queue Length:</th><td>"+q.length+"<td></tr>");
+// 		for(var i=0;i<q.length;i++){
+// 			var baseString="<tr><th>"+i+":</td></tr>";
+// 			if(q[i]=="inprogress"){
+// 				$("table").append(baseString+"in progress</td></tr>");
+// 			}else{
+// 				$("table").append(baseString+q[i]+"</td></tr>");
+// 			}
+// 		}
+// 		setTimeout(printQueue,500);
+// 	}
+// 	});
+// 	
+// $(document).ready(function(){
+
+// 	$("form").remove();
+
+// 	$("h1").css({
+// 		"position":"fixed",
+// 		"z-index":"1",
+// 		"min-width":"0",
+// 		"background-color":"red"
+// 	});
+
+// 	$("<table border=1></table>")
+// 	.appendTo("body").css({
+// 		position:"fixed","z-index":"2",
+// 		"border-collapse":"collapse",top:100
+// 	});
+
+// 	$("<button>停止</button><button>开始</button>")
+// 	.appendTo($("<div/>").appendTo("body").css({
+// 		position:"fixed","z-index":"2","border-collapse":"collapse",top:100,
+// 		left:200
+// 	})).click(function(e){
+// 		$(this).text()=="停止" ? $("h1").stop(true,true) : cycleEffects();
+// 	});
+
+// 	var timespan="slow";
+
+// 	cycleEffects();
+// 	printQueue();
+
+// 	function cycleEffects(){
+// 		$("h1")
+// 		.animate({left:"+=100"},timespan)
+// 		.animate({left:"-=100"},timespan)
+// 		.queue(function(){
+// 			$("body").fadeTo(timespan,0).fadeTo(timespan,1);
+// 		})
+// 		.animate({height:223,width:700},timespan)
+// 		.animate({height:30,width:500},timespan)
+// 		.delay(1000)
+// 		.slideUp(timespan)
+// 		.slideDown(timespan,function(){
+// 			if(!finishAnimations){
+// 				cycleEffects();
+// 			}
+// 		});
+// 	}
+
+// 	function printQueue(){
+// 		var q=$("h1").queue();
+// 		var qtable=$("table");
+// 		qtable.html("<tr><th>Queue Length:</th><td>"+q.length+"<td></tr>");
+// 		for(var i=0;i<q.length;i++){
+// 			var baseString="<tr><th>"+i+":</td></tr>";
+// 			if(q[i]=="inprogress"){
+// 				$("table").append(baseString+"in progress</td></tr>");
+// 			}else{
+// 				$("table").append(baseString+q[i]+"</td></tr>");
+// 			}
+// 		}
+// 		setTimeout(printQueue,500);
+// 	}
+// 	});
+$(document).ready(function(){
+	$.fx.off = true;
+	$("form").remove();
+
+	$("h1").css({
+		"position":"fixed",
+		"z-index":"1",
+		"min-width":"0",
+		"background-color":"red"
+	});
+
+	$("<table border=1></table>")
+	.appendTo("body").css({
+		position:"fixed","z-index":"2",
+		"border-collapse":"collapse",top:100
+	});
+
+	$("<button>停止</button><button>开始</button>")
+	.appendTo($("<div/>").appendTo("body").css({
+		position:"fixed","z-index":"2","border-collapse":"collapse",top:100,
+		left:200
+	})).click(function(e){
+		$(this).text()=="停止" ? $("h1").stop(true,true) : cycleEffects();
+	});
+
+	var timespan="slow";
+
+	cycleEffects();
+	printQueue();
+
+	function cycleEffects(){
+		$("h1")
+		.animate({left:"+=100"},timespan)
+		.animate({left:"-=100"},timespan)
+		.queue(function(){
+			$("body").fadeTo(timespan,0).fadeTo(timespan,1);
+		})
+		.animate({height:223,width:700},timespan)
+		.animate({height:30,width:500},timespan)
+		.delay(1000)
+		.slideUp(timespan)
+		.slideDown(timespan,function(){
+			if(!finishAnimations){
+				cycleEffects();
 			}
 		});
+	}
+
+	function printQueue(){
+		var q=$("h1").queue();
+		var qtable=$("table");
+		qtable.html("<tr><th>Queue Length:</th><td>"+q.length+"<td></tr>");
+		for(var i=0;i<q.length;i++){
+			var baseString="<tr><th>"+i+":</td></tr>";
+			if(q[i]=="inprogress"){
+				$("table").append(baseString+"in progress</td></tr>");
+			}else{
+				$("table").append(baseString+q[i]+"</td></tr>");
+			}
+		}
+		setTimeout(printQueue,500);
+	}
 	});
