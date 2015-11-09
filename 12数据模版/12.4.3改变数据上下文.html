@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>12.4.3改变数据上下文</title>
+<link rel="stylesheet" href="" />
+<script src="../js/jquery-1.10.1.js"></script>
+<script src="../js/handlebars v2.0.0-alpha.4.js"></script>
+<script src="../js/handlebars-jquery.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	
+</style>
+</head>
+<body>
+<h1>花</h1>
+<form method="post">	
+</form>
+<script id="flowerListTmpl" type="text/x-handlebars-template">
+	<ul>
+	<h3>{{title}}</h3>
+	{{#each stockData}}
+		<li>{{description.Name}}({{description.Stock}} in stock)</li>
+	{{/each}}
+	</ul>
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var data={
+			title:"Stock List",
+			stockData:{
+				aster:{
+					description:{Name:"Aster",Stock:10}
+				},
+				daffodil:{description:{Name:"Daffodil",Stock:12}
+				},
+				rose:{
+					description:{Name:"Rose",Stock:2}
+				}
+			}
+		};
+		$("#flowerListTmpl").template(data).appendTo("form");
+	});
+
+</script>
+</body>
+</html>

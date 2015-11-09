@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>12数据模板</title>
+<link rel="stylesheet" href="" />
+<script src="../js/jquery-1.10.1.js"></script>
+<script src="../js/handlebars v2.0.0-alpha.4.js"></script>
+<script src="../js/handlebars-jquery.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+	img.blueBorder{
+			border:thick solid blue;
+		}
+	img.redBorder{
+		border:thick solid red;
+	}
+	label.bigFont{font-size:1.5em;}
+	.drow{
+		float:left;
+	}
+	.dcell{
+		float:left;
+	}
+</style>
+</head>
+<body>
+<h1>花</h1>
+<form method="post">
+<div id="oblock">
+	<div class="dtable">
+		<div id="row1" class="drow">
+
+		</div>
+		<div id="row2" class="drow">
+			
+		</div>
+
+	</div>
+</div>
+
+<div id="buttonDiv"><button type="submit">订购</button></div>	
+</form>
+<!-- 定义数据模板，模板中包含占位符的HTML元素，占位符对应着数据对象的各个部分。 -->
+<!-- id为模板名，type为了避免浏览器对模板进行解析，#flowers为区域指令，命名与data对象中的属性名相同，｛｛product｝｝为变量指令 -->
+<script id="flowerTmpl" type="text/x-handlebars-template">
+	{{#each flowers}}
+		<div class="dcell">
+		<img src="../img/{{product}}.png"/>
+		<label for="{{product}}">{{name}}:</label>
+		// <input name="{{product}}" data-price="{{price}}" data-stock="{stock}" value="{{#if stock}}1{{else}}0{{/if}}" required/>
+		// 使用#if和#unless助手指令
+		<input name="{{product}}" data-price="{{price}}" data-stock="{stock}" value="{{#if stock}}1{{/if}}{{#unless stock}}0{{/unless}}" required/>
+		</div>
+	{{/each}}
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		// 声明data对象，存放花卉对象数组，花卉属性值为数组，数组包含6个对象，每个对象都有一套描述花店产品的属性
+		var data={
+			flowers:[
+			{name:"Aster",product:"aster",stock:"10",price:2.99},
+			{name:"Daffodil",product:"daffodil",stock:"12",price:1.99},
+			{name:"Rose",product:"rose",stock:"2",price:4.99},
+			{name:"Peony",product:"peony",stock:"0",price:1.50},
+			{name:"Primula",product:"primula",stock:"1",price:3.12},
+			{name:"Snowdrop",product:"snowdrop",stock:"15",price:0.99}
+			]
+		};
+		//使用模板逻辑改变模板输出
+		for(var i=0;i<data.flowers.length;i++){
+			if(data.flowers[i].stock==0){
+				data.flowers[i].stock=null;
+			}
+		}
+		// 把data对象作为参数传递给在handlebars-jquery.js中定义的template方法，template方法返回的是jquery对象格式的模板渲染结果，得到一系列div元素，然后使用appendTo方法把他们整体插入到#row1元素中。
+		// var template = $("#flowerTmpl").template(data).appendTo("#row1");
+		// 调整模板返回结果
+		// $("#flowerTmpl").template(data).slice(0,3).appendTo("#row1").end().end().slice(3).appendTo("#row2");
+		// 使用filter(*)过滤文本节点
+		// $("#flowerTmpl").template(data).filter("*").slice(0,3).appendTo("#row1").end().end().slice(3).appendTo("#row2");
+		//使用多个语句分离元素
+		// var templateHtml = $("#flowerTmpl").template(data).filter("*");
+		// templateHtml.slice(0,3).appendTo("#row1");
+		// templateHtml.slice(3).appendTo("#row2");
+		// 调整输入数据以改变模板输出
+		var tElem=$("#flowerTmpl");
+		tElem.template({flowers:data.flowers.slice(0,3)}).appendTo("#row1");
+		tElem.template({flowers:data.flowers.slice(3)}).appendTo("#row2");
+	});
+
+</script>
+</body>
+</html>
