@@ -84,13 +84,13 @@
 		// 使用filter(*)过滤文本节点
 		// $("#flowerTmpl").template(data).filter("*").slice(0,3).appendTo("#row1").end().end().slice(3).appendTo("#row2");
 		//使用多个语句分离元素
-		// var templateHtml = $("#flowerTmpl").template(data).filter("*");
-		// templateHtml.slice(0,3).appendTo("#row1");
-		// templateHtml.slice(3).appendTo("#row2");
+		var templateHtml = $("#flowerTmpl").template(data).filter("*");
+		templateHtml.slice(0,3).appendTo("#row1");
+		templateHtml.slice(3).appendTo("#row2");
 		// 调整输入数据以改变模板输出
-		var tElem=$("#flowerTmpl");
-		tElem.template({flowers:data.flowers.slice(0,3)}).appendTo("#row1");
-		tElem.template({flowers:data.flowers.slice(3)}).appendTo("#row2");
+		// var tElem=$("#flowerTmpl");
+		// tElem.template({flowers:data.flowers.slice(0,3)}).appendTo("#row1");
+		// tElem.template({flowers:data.flowers.slice(3)}).appendTo("#row2");
 	});
 
 </script>
